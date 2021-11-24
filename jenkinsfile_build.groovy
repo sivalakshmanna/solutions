@@ -2,13 +2,14 @@
 pipeline{
     agentany
     parameters{
-        string(name: 'SOURCE_CODE', defaltValue: 'master',description: 'clone source code')
         string(name: 'BRANCH_NAME', defaltValue: '', description: 'git branch name')
+        string(url: '', defaltValue: '', description: 'download clone')
     }
     stages{
         stage("clone the code"){
             steps{
                 println "clonig code from github"
+                      
             }
         }
         stage("build the code"){
