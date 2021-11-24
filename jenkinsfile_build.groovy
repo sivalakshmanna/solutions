@@ -3,12 +3,16 @@ pipeline{
     agent any
     parameters{
         string(name: 'BRANCH_NAME', defaultValue: '', description: 'git branch name')
-        string(name: 'url', defaultValue: '', description: 'download url')
+        //string(name: 'url', defaultValue: '', description: 'download url')
     }
     stages{
         stage("clone the code"){
             steps{
-                println "clonig code from  the other github"
+                 println "clone our code to our repository"
+                sh "ls -l"
+                sh "ls -lart ./*"
+                git branch: "${BRANCH_NAME}",
+                url: 'https://github.com/KuruvaSomaSekhar/boxfuse-sample-java-war-hello.git'
                       
             }
         }
