@@ -2,8 +2,8 @@
 pipeline{
     agent any
     parameters{
-        string(name: 'BRANCH_NAME', defaltValue: '', description: 'git branch name')
-        string(name: 'url', defaltValue: '', description: 'download url')
+        string(name: 'BRANCH_NAME', defaultValue: '', description: 'git branch name')
+        string(name: 'url', defaultValue: '', description: 'download url')
     }
     stages{
         stage("clone the code"){
