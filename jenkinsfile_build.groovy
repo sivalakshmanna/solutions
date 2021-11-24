@@ -1,9 +1,9 @@
 //declarative pipeline
 pipeline{
-    agentany
+    agent any
     parameters{
         string(name: 'BRANCH_NAME', defaltValue: '', description: 'git branch name')
-        string(name: 'url', defaltValue: '', description: 'download clone')
+        string(name: 'url', defaltValue: '', description: 'download url')
     }
     stages{
         stage("clone the code"){
