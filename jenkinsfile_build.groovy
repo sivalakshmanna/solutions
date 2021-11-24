@@ -14,9 +14,9 @@ pipeline{
         }
         stage("build the code"){
             steps{
-                println "build the code"
+                println "mvn clean package"
                 sh "mvn clean package"
-                sh "ls -l target"
+                sh "ls -l target/"
             }
         }
         stage("uploading artifacts to s3"){
