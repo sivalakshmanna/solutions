@@ -3,7 +3,7 @@ pipeline{
     agent any
     parameters{
         string(name: 'BRANCH_NAME', defaultValue: '', description: 'git branch name')
-         string(name: 'BRANCH_NAME', defaultValue: '', description: 'git branch name')
+         string(name: 'BUILD_NUMBRES', defaultValue: '', description: 'enter build number')
         //string(name: 'url', defaultValue: '', description: 'download url')
     }
     stages{
