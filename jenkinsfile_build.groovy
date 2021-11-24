@@ -3,12 +3,12 @@ pipeline{
     agentany
     parameters{
         string(name: 'BRANCH_NAME', defaltValue: '', description: 'git branch name')
-        string(url: '', defaltValue: '', description: 'download clone')
+        string(name: 'url', defaltValue: '', description: 'download clone')
     }
     stages{
         stage("clone the code"){
             steps{
-                println "clonig code from github"
+                println "clonig code from  the other github"
                       
             }
         }
