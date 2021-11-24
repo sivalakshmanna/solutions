@@ -2,7 +2,7 @@
 pipeline{
     agentany
     parameters{
-        string(name: 'SOURCE_CODE', defaltValue: '',description: 'clone source code')
+        string(name: 'SOURCE_CODE', defaltValue: 'master',description: 'clone source code')
         string(name: 'BRANCH_NAME', defaltValue: '', description: 'git branch name')
     }
     stages{
