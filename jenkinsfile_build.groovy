@@ -1,30 +1,28 @@
-//declarative pipeline
 pipeline{
     agent any
-    parameters{
-        string(name: 'BRANCH_NAME', defaultValue: '', description: 'git branch name')
-         //string(name: 'BUILD_NUMBRES', defaultValue: '', description: 'enter build number')
-        //string(name: 'url', defaultValue: '', description: 'download url')
+    environment {
+        BRANCH = "${env.BRANCH_NAME}"
     }
     stages{
-        stage("clone the code"){
+        stage("chekout code"){
             steps{
-                 println "clone our code to our repository"
+                println "clone our code to our repository"
                 sh "ls -l"
                 sh "ls -lart ./*"
                 git branch: "${BRANCH_NAME}",
                 url: 'https://github.com/KuruvaSomaSekhar/boxfuse-sample-java-war-hello.git'
-                      
+                
+
             }
         }
-        stage("build the code"){
+        stage("build code"){
             steps{
                 println "mvn clean package"
                 sh "mvn clean package"
                 sh "ls -l target/"
             }
         }
-        stage("uploading artifacts to s3"){
+        stage("upload artifacts to s3"){
             steps{
                 println "uploading artifacts to s3 bucket"
                 sh "echo $BUILD_NUMBER"
@@ -33,3 +31,4 @@ pipeline{
         }
     }
 }
+
